@@ -25,6 +25,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Build Aman hero image
         run: base64 -d assets/hero-live.b64.00 > hero-aman.webp
+      - name: Build generated hero image
+        run: |
+          curl -L --fail --retry 3 -o hero-main-aman.jpg "https://chatgpt.com/backend-api/files/file_00000000b3fc82069a8f7397fba77dd6"
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
