@@ -63,6 +63,9 @@ overflow:hidden}
 .editorial-tile{height:410px;position:relative;overflow:hidden;color:#fff;border:0;background:#444;text-align:left;padding:0}
 .editorial-tile:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 44%,rgba(16,13,11,.76));z-index:1}
 .editorial-tile .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s ease}
+.editorial-tile:nth-child(1) .bg{background-position:center 54%}
+.editorial-tile:nth-child(2) .bg{background-position:center 52%}
+.editorial-tile:nth-child(3) .bg{background-position:center 58%}
 .editorial-tile:hover .bg{transform:scale(1.025)}
 .editorial-tile .copy{position:absolute;z-index:2;left:25px;right:25px;bottom:24px}
 .editorial-tile h3{margin:0 0 13px;font:400 27px/1.2 Georgia,"Noto Serif KR",serif}
@@ -70,7 +73,7 @@ overflow:hidden}
 
 .quote{margin:7px 16px 0;min-height:310px;position:relative;display:grid;place-items:center;text-align:center;color:#fff;background:
 linear-gradient(rgba(24,17,12,.58),rgba(24,17,12,.68)),
-url("https://images.pexels.com/photos/29419530/pexels-photo-29419530.jpeg?cs=srgb&dl=pexels-fernando-b-m-3624021-29419530.jpg&fm=jpg") center 74%/cover no-repeat}
+url("assets/quote-bg.webp") center 50%/cover no-repeat}
 .quote:before{content:"";position:absolute;top:22px;width:1px;height:36px;background:rgba(255,255,255,.6)}
 .quote-inner{padding:55px 24px 42px}
 .quote p{font:400 clamp(19px,2vw,28px)/1.65 Georgia,"Noto Serif KR",serif;margin:0 0 17px}
@@ -220,15 +223,15 @@ url("https://images.pexels.com/photos/29419530/pexels-photo-29419530.jpeg?cs=srg
 
     <section class="editorial-three">
       <button class="editorial-tile" onclick="showPage('info')">
-        <span class="bg" style="background-image:url('https://images.pexels.com/photos/20368292/pexels-photo-20368292.jpeg?cs=srgb&dl=pexels-cien-nguyen-919594939-20368292.jpg&fm=jpg')"></span>
+        <span class="bg" style="background-image:url('assets/tile-travel.webp')"></span>
         <span class="copy"><h3>여행정보</h3><span>항공편 · 시차 · 숙소 정보 →</span></span>
       </button>
       <button class="editorial-tile" onclick="showPage('hotel')">
-        <span class="bg" style="background-image:url('https://www.stay-in-bangkok.com/storage/767150/conversions/why-boss-suites-nana-hotel-bangkok-thailand-appeals-to-modern-leisure-travellers-teaser.webp')"></span>
+        <span class="bg" style="background-image:url('assets/tile-hotel.webp')"></span>
         <span class="copy"><h3>머무는 곳</h3><span>호텔 알아보기 →</span></span>
       </button>
       <button class="editorial-tile" onclick="showPage('guide')">
-        <span class="bg" style="background-image:url('https://static.bkkmenu.com/files/2025/04/Kwann-11-670x1006.jpg')"></span>
+        <span class="bg" style="background-image:url('assets/tile-enjoy.webp')"></span>
         <span class="copy"><h3>방콕에서 즐길 것</h3><span>추천 리스트 보기 →</span></span>
       </button>
     </section>
