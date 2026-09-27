@@ -23,13 +23,29 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Fetch T.R Gift Shop photo
+      - name: Fetch local guide photos
         run: |
           mkdir -p assets
           curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
             "https://stat.ameba.jp/user_images/20250911/06/maico117/1c/d4/j/o1080144015670806877.jpg?caw=800" \
             -o assets/tr-gift-shop.jpg
+          curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
+            "https://img.wongnai.com/p/1600x0/2024/08/25/fd6151d5b77e4a1fba9cbe7a27787050.jpg" \
+            -o assets/banpo-ekkamai.jpg
+          curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
+            "https://images.squarespace-cdn.com/content/v1/614c298805150223748f6164/c905ba83-e2f8-413d-b1ff-7fb7ff1b6f7b/S__4399286.jpg" \
+            -o assets/crimson-room.jpg
+          curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
+            "https://cms-website.asiatiquethailand.com/uploads/Asiatiquesky_1_b691189a03.png" \
+            -o assets/asiatique.png
+          curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
+            "https://content.phuket101.net/wp-content/uploads/20250321105510/Banthatthong-5.jpg" \
+            -o assets/banthat-thong.jpg
           test -s assets/tr-gift-shop.jpg
+          test -s assets/banpo-ekkamai.jpg
+          test -s assets/crimson-room.jpg
+          test -s assets/asiatique.png
+          test -s assets/banthat-thong.jpg
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
