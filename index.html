@@ -135,6 +135,14 @@ url("assets/quote-bg.webp") center 50%/cover no-repeat}
 .quick-row{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
 .quick-row b{font:400 20px Georgia,serif}
 .quick-row a{font-size:10px;border-bottom:1px solid var(--ink)}
+.tdac-notice{margin:0 0 56px;padding:28px 30px;background:#2a221c;color:#fff;border:1px solid rgba(168,139,99,.55)}
+.tdac-notice .notice-kicker{font-size:9px;letter-spacing:.24em;color:#d7bd97;margin-bottom:12px}
+.tdac-notice h3{margin:0 0 12px;font:400 32px/1.25 Georgia,"Noto Serif KR",serif}
+.tdac-notice p{margin:0;color:rgba(255,255,255,.78);font-size:13px;line-height:1.8}
+.tdac-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.tdac-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.35);font-size:11px;letter-spacing:.02em}
+.tdac-actions a.primary{background:#fff;color:#241e19;border-color:#fff}
+@media(max-width:560px){.tdac-notice{padding:22px 20px;margin-bottom:44px}.tdac-notice h3{font-size:26px}.tdac-actions{display:grid}.tdac-actions a{width:100%}}
 
 .sheet{position:fixed;inset:0;background:rgba(20,17,15,.58);z-index:50;display:none;align-items:flex-end;justify-content:center}
 .sheet.on{display:flex}
@@ -305,6 +313,16 @@ url("assets/quote-bg.webp") center 50%/cover no-repeat}
   <section id="info" class="page">
     <div class="wrap">
       <div class="page-head"><div class="eyebrow">TRAVEL ESSENTIALS</div><h2>여행정보</h2><p>항공편부터 시차와 숙소까지, 여행에 필요한 정보를 한 곳에 정리했습니다.</p></div>
+
+      <section class="tdac-notice" aria-label="태국 입국신고서 작성 안내">
+        <div class="notice-kicker">IMPORTANT · 반드시 확인</div>
+        <h3>태국 입국신고서(TDAC) 꼭 작성해주세요.</h3>
+        <p>태국 입국 전 입국신고서 작성이 필요합니다. 출발 전에 미리 작성해두고, 작성이 어렵다면 아래 가이드를 참고해주세요.</p>
+        <div class="tdac-actions">
+          <a class="primary" href="https://tdac.immigration.go.th/arrival-card" target="_blank" rel="noopener noreferrer">입국신고서 작성하기 ↗</a>
+          <a href="https://blog.naver.com/ramrami__/224408770717" target="_blank" rel="noopener noreferrer">작성 가이드 보기 ↗</a>
+        </div>
+      </section>
 
       <div class="eyebrow" style="margin-top:4px">FLIGHT INFORMATION</div>
       <h3 style="font-size:32px;margin:0 0 8px">항공편 정보</h3>
