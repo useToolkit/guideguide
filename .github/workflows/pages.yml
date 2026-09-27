@@ -23,6 +23,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Fetch T.R Gift Shop photo
+        run: |
+          mkdir -p assets
+          curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
+            "https://4.bp.blogspot.com/_xU4PYw5N33Q/TA6JLJkzllI/AAAAAAAAABw/NjaxMYCGxaM/S600/IMG_4905-1.jpg" \
+            -o assets/tr-gift-shop.jpg
+          test -s assets/tr-gift-shop.jpg
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
