@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p assets
           curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
-            "https://4.bp.blogspot.com/_xU4PYw5N33Q/TA6JLJkzllI/AAAAAAAAABw/NjaxMYCGxaM/S600/IMG_4905-1.jpg" \
+            "https://stat.ameba.jp/user_images/20250911/06/maico117/1c/d4/j/o1080144015670806877.jpg?caw=800" \
             -o assets/tr-gift-shop.jpg
           test -s assets/tr-gift-shop.jpg
       - name: Configure Pages
