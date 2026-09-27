@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Decode Aman hero image
-        run: cat assets/hero.b64.* | base64 -d > hero.webp
+        run: cat assets/hero.b64.* | base64 -d > hero.jpg
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
