@@ -23,18 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Decode Aman hero image
-        run: cat assets/hero.b64.* | base64 -d > hero.jpg
-      - name: Generate Google Maps runtime config
-        env:
-          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
-        run: |
-          python3 - <<'PY'
-          import json, os
-          key=os.environ.get("GOOGLE_MAPS_API_KEY","")
-          with open("google-maps-config.js","w",encoding="utf-8") as f:
-              f.write("window.GUIDEGUIDE_GOOGLE_MAPS_KEY="+json.dumps(key)+";\n")
-          PY
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
