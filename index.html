@@ -495,7 +495,7 @@ document.getElementById('flightList').innerHTML=flights.map(x=>`<article class="
 </article>`).join('');
 
 document.getElementById('hotelList').innerHTML=hotels.map((x,i)=>`<article class="hotel-card">
-  <div class="hotel-photo" style="background-image:url('${i===0?'https://www.stay-in-bangkok.com/storage/767150/conversions/why-boss-suites-nana-hotel-bangkok-thailand-appeals-to-modern-leisure-travellers-teaser.webp':'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1400&q=85'}')"></div>
+  <div class="hotel-photo" style="background-image:url('${i===0?'https://www.thehotelguru.com/_images/b0/78/b078b5e5dc9c28c1a6ba58fa435452b1/s440x440.jpg':'https://destinasian.com/_next/image?q=100&url=https%3A%2F%2Fstaging.destinasian.com%2Fwp-content%2Fuploads%2FDusit-Thani-Bangkok-deluxe-guestroom-view.jpg&w=3840'}')"></div>
   <div class="hotel-copy"><div class="eyebrow">${x.label} · ${x.area}</div><h3>${x.name}</h3><p>${x.address}</p><a href="${mapUrl(x)}" target="_blank" rel="noopener">Google Maps에서 보기 ↗</a></div>
 </article>`).join('');
 
