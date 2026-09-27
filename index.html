@@ -170,6 +170,14 @@ main.wrap{padding-top:0}
   .clock>span{font-size:8px}
   .panel{padding:30px 22px calc(28px + env(safe-area-inset-bottom))}
 }
+
+.google-place-photo{background-color:#d9d1c5;background-image:linear-gradient(135deg,#ded7cc,#c8bdae);position:relative}
+.google-place-photo.photo-ready{background-size:cover;background-position:center}
+.photo-status{position:absolute;z-index:2;left:18px;top:18px;color:rgba(255,255,255,.86);font-size:8px;letter-spacing:.14em}
+.photo-source{position:absolute;z-index:4;right:16px;bottom:16px;color:#fff;font-size:8px;letter-spacing:.08em;border-bottom:1px solid rgba(255,255,255,.75);padding-bottom:3px}
+.photo-credit{position:absolute;z-index:4;left:18px;right:92px;bottom:16px;color:rgba(255,255,255,.82);font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.photo-credit a{color:inherit}
+.place-heart{border:0;background:rgba(0,0,0,.12);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;padding:0}
 </style>
 </head>
 
@@ -298,7 +306,7 @@ main.wrap{padding-top:0}
 <footer class="footer">
   <div class="wrap"><b>CHOEGANG</b><span>BANGKOK · OCTOBER 2026</span></div>
 </footer>
-<script>const places=[
+<script src="google-maps-config.js"></script><script>const places=[
   { id:'tr-gift-shop', name:'T.R Gift Shop', categories:['gift'], address:'2 4 Charoen Krung 40 Alley, Bang Rak, Bangkok 10500 Thailand', shortLocation:'Bang Rak · Bangkok', area:'silom-sathon', tags:['gift','souvenir'] },
   { id:'mbk-center', name:'MBK CENTER', categories:['gift'], address:'444 Phaya Thai Rd, Wang Mai, Bangkok 10330 Thailand', shortLocation:'Pathum Wan · Bangkok', area:'siam-pathumwan', tags:['shopping','gift'] },
   { id:'big-c-market', name:'Big C 마켓', englishName:'Big C Market', categories:['gift'], address:'946 Rama IV Rd, Si Lom, Bang Rak, Bangkok 10500 Thailand', shortLocation:'Si Lom · Bangkok', area:'silom-sathon', tags:['market','gift'] },
@@ -362,44 +370,147 @@ const cats={all:'전체',gift:'선물',activity:'즐길거리',rooftop:'루프�
   scrollTo({top:0,behavior:'smooth'});
 }
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>tabs(b.dataset.tab));
-function imageFor(p){
-  const special={
-    'ojo-bangkok':'https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&w=1100&q=82',
-    'iconsiam':'https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1100&q=82',
-    'akara-sky-hanuman':'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1100&q=82',
-    'tichuca':'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1100&q=82',
-    'lumpini-park':'https://images.unsplash.com/photo-1562602833-0f4ab2fc46e3?auto=format&fit=crop&w=1100&q=82',
-    'thipsamai-siam-paragon':'https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1100&q=82'
-  };
-  if(special[p.id]) return special[p.id];
-  if(p.categories.includes('food')) return 'https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1100&q=82';
-  if(p.categories.includes('rooftop')) return 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1100&q=82';
-  if(p.categories.includes('gift')) return 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1100&q=82';
-  return 'https://images.unsplash.com/photo-1562602833-0f4ab2fc46e3?auto=format&fit=crop&w=1100&q=82';
+const placeIdCache=JSON.parse(localStorage.getItem('guideguide:googlePlaceIds')||'{}');
+let GooglePlaceClass=null;
+let photoObserver=null;
+
+function savePlaceId(id,placeId){
+  if(!placeId) return;
+  placeIdCache[id]=placeId;
+  localStorage.setItem('guideguide:googlePlaceIds',JSON.stringify(placeIdCache));
 }
+
 function card(p){
   const kind=p.categories.map(c=>({gift:'선물',activity:'즐길거리',rooftop:'루프탑',food:'맛집'}[c]||c)).join(' · ');
   return `<article class="place-card">
-    <button class="place-image" style="background-image:url('${imageFor(p)}')" onclick="openPlace('${p.id}')" aria-label="${p.name} 상세보기">
+    <div class="place-image google-place-photo" data-place-photo="${p.id}" onclick="openPlace('${p.id}')" role="button" tabindex="0" aria-label="${p.name} 상세보기">
+      <span class="photo-status">PHOTO · GOOGLE MAPS</span>
       <span class="place-kind">${kind}</span>
-      <span class="place-heart" onclick="event.stopPropagation();toggleFav('${p.id}')">${fav.includes(p.id)?'♥':'♡'}</span>
-    </button>
+      <button class="place-heart" type="button" onclick="event.stopPropagation();toggleFav('${p.id}')" aria-label="즐겨찾기">${fav.includes(p.id)?'♥':'♡'}</button>
+      <a class="photo-source" href="${mapUrl(p)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="display:none">원본 사진 ↗</a>
+      <span class="photo-credit"></span>
+    </div>
     <div class="place-copy">
       <div class="place-loc">${p.floor?p.floor+' · ':''}${p.shortLocation}</div>
       <h3>${p.name}</h3>
       ${p.englishName?`<p>${p.englishName}</p>`:''}
       <div class="place-actions">
         <button onclick="openPlace('${p.id}')">자세히 보기</button>
-        <a href="${mapUrl(p)}" target="_blank" rel="noopener noreferrer">지도 열기 ↗</a>
+        <a href="${mapUrl(p)}" target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
       </div>
     </div>
   </article>`;
 }
-function renderHome(){let ids=['ojo-bangkok','iconsiam','akara-sky-hanuman'];homeCards.innerHTML=ids.map(id=>card(places.find(p=>p.id===id))).join('')}function renderPlaces(){
+
+async function resolveGooglePlace(p){
+  if(!GooglePlaceClass) return null;
+  const cachedId=placeIdCache[p.id];
+  if(cachedId){
+    const place=new GooglePlaceClass({id:cachedId});
+    await place.fetchFields({fields:['photos']});
+    return place;
+  }
+  const {places:matches}=await GooglePlaceClass.searchByText({
+    textQuery:`${p.englishName||p.name}, ${p.address}`,
+    fields:['id'],
+    region:'th',
+    maxResultCount:1
+  });
+  const found=matches&&matches[0];
+  if(!found||!found.id) return null;
+  savePlaceId(p.id,found.id);
+  const place=new GooglePlaceClass({id:found.id});
+  await place.fetchFields({fields:['photos']});
+  return place;
+}
+
+async function hydratePlacePhoto(el){
+  if(!GooglePlaceClass||el.dataset.photoState) return;
+  const p=places.find(x=>x.id===el.dataset.placePhoto);
+  if(!p) return;
+  el.dataset.photoState='loading';
+  try{
+    const place=await resolveGooglePlace(p);
+    const photo=place&&place.photos&&place.photos[0];
+    if(!photo) throw new Error('no photo');
+    const uri=photo.getURI({maxWidth:1200,maxHeight:900});
+    const img=new Image();
+    img.onload=()=>{
+      el.style.backgroundImage=`url("${uri}")`;
+      el.classList.add('photo-ready');
+      el.dataset.photoState='ready';
+      const status=el.querySelector('.photo-status');
+      if(status) status.style.display='none';
+    };
+    img.onerror=()=>{el.dataset.photoState='error'};
+    img.src=uri;
+    const source=el.querySelector('.photo-source');
+    if(source){
+      source.href=photo.googleMapsURI||mapUrl(p);
+      source.style.display='inline-block';
+    }
+    const a=photo.authorAttributions&&photo.authorAttributions[0];
+    const credit=el.querySelector('.photo-credit');
+    if(credit&&a){
+      credit.textContent='Photo · '+a.displayName;
+      if(a.uri){
+        credit.innerHTML=`Photo · <a href="${a.uri}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${a.displayName}</a>`;
+      }
+    }
+  }catch(e){
+    el.dataset.photoState='error';
+    const status=el.querySelector('.photo-status');
+    if(status) status.textContent='사진을 불러오지 못했습니다 · Google Maps에서 보기';
+  }
+}
+
+function schedulePhotoHydration(){
+  requestAnimationFrame(()=>{
+    const els=[...document.querySelectorAll('[data-place-photo]:not([data-photo-state])')];
+    if(!GooglePlaceClass) return;
+    if(!('IntersectionObserver' in window)){
+      els.forEach(hydratePlacePhoto); return;
+    }
+    if(!photoObserver){
+      photoObserver=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            photoObserver.unobserve(entry.target);
+            hydratePlacePhoto(entry.target);
+          }
+        });
+      },{rootMargin:'300px 0px'});
+    }
+    els.forEach(el=>photoObserver.observe(el));
+  });
+}
+
+window.initGuideGooglePhotos=async function(){
+  try{
+    const lib=await google.maps.importLibrary('places');
+    GooglePlaceClass=lib.Place;
+    schedulePhotoHydration();
+  }catch(e){
+    console.warn('Google Places photos unavailable',e);
+  }
+};
+
+function bootGooglePhotos(){
+  const key=window.GUIDEGUIDE_GOOGLE_MAPS_KEY||'';
+  if(!key) return;
+  if(document.querySelector('script[data-guide-google-maps]')) return;
+  const s=document.createElement('script');
+  s.dataset.guideGoogleMaps='1';
+  s.async=true;
+  s.src='https://maps.googleapis.com/maps/api/js?key='+encodeURIComponent(key)+'&loading=async&v=weekly&libraries=places&callback=initGuideGooglePhotos';
+  document.head.appendChild(s);
+}
+function renderHome(){let ids=['ojo-bangkok','iconsiam','akara-sky-hanuman'];homeCards.innerHTML=ids.map(id=>card(places.find(p=>p.id===id))).join('');schedulePhotoHydration()}function renderPlaces(){
   let q=document.getElementById('q').value.trim().toLowerCase(),saved=document.getElementById('savedOnly').checked;
   let r=places.filter(p=>(!q||(`${p.name} ${p.englishName||''} ${p.address} ${(p.tags||[]).join(' ')}`).toLowerCase().includes(q))&&(cat==='all'||p.categories.includes(cat))&&(area==='all'||p.area===area)&&(!saved||fav.includes(p.id)));
   count.textContent='총 '+r.length+'곳';
   placesGrid.innerHTML=r.length?r.map(card).join(''):'<div class="empty">조건에 맞는 장소가 없습니다.</div>';
+  schedulePhotoHydration();
 }function chips(){catChips.innerHTML=Object.entries(cats).map(([k,v])=>`<button data-cat="${k}" class="${k===cat?'on':''}">${v}</button>`).join('');areaChips.innerHTML=Object.entries(areas).map(([k,v])=>`<button data-area="${k}" class="${k===area?'on':''}">${v}</button>`).join('');document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{cat=b.dataset.cat;chips();renderPlaces()});document.querySelectorAll('[data-area]').forEach(b=>b.onclick=()=>{area=b.dataset.area;chips();renderPlaces()})}function toggleFav(id){fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];localStorage.setItem('guideguide:fav',JSON.stringify(fav));renderHome();renderPlaces()}window.toggleFav=toggleFav;window.openPlace=id=>{let p=places.find(x=>x.id===id);sheetCats.textContent=p.categories.join(' · ').toUpperCase();sheetName.textContent=p.name;sheetEn.textContent=p.englishName||'';sheetAddr.textContent=p.address;sheetMap.href=mapUrl(p);sheet.classList.add('on')};closeSheet.onclick=()=>sheet.classList.remove('on');sheet.onclick=e=>{if(e.target===sheet)sheet.classList.remove('on')};
 flightList.innerHTML=flights.map(x=>`<article class="journey-card">
   <div class="journey-top"><span>${x.type==='OUTBOUND'?'출국편':'귀국편'}</span><b>${x.flightNo} · ${x.airline}</b></div>
@@ -426,6 +537,6 @@ quickHotels.innerHTML=hotels.map(x=>`<article class="quick-row"><div><small>숙�
 function clock(){let n=new Date;seoul.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(n);bkk.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(n)}clock();setInterval(clock,30000);function status(){
   let n=new Date,s=new Date('2026-10-23T00:00:00+07:00'),e=new Date('2026-10-27T00:00:00+07:00'),d=86400000;
   tripStatus.textContent=n<s?'출발까지 '+Math.ceil((s-n)/d)+'일':n<e?'방콕 여행 '+Math.min(4,Math.floor((n-s)/d)+1)+'일차':'좋은 여행이었습니다';
-}status();function syncHeader(){document.body.classList.toggle('scrolled',window.scrollY>260)}window.addEventListener('scroll',syncHeader,{passive:true});syncHeader();q.oninput=renderPlaces;savedOnly.onchange=renderPlaces;chips();renderHome();renderPlaces();</script>
+}status();function syncHeader(){document.body.classList.toggle('scrolled',window.scrollY>260)}window.addEventListener('scroll',syncHeader,{passive:true});syncHeader();q.oninput=renderPlaces;savedOnly.onchange=renderPlaces;chips();renderHome();renderPlaces();bootGooglePhotos();</script>
 </body>
 </html>
