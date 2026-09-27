@@ -31,7 +31,7 @@ jobs:
             -o assets/tr-gift-shop.jpg
           curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
             "https://img.wongnai.com/p/1600x0/2025/10/04/a2eb1883067d41e796f87296a091d864.jpg" \
-            -o assets/banpo-ekkamai.jpg
+            -o assets/banpo-ekkamai-meat-v2.jpg
           curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
             "https://images.squarespace-cdn.com/content/v1/614c298805150223748f6164/c905ba83-e2f8-413d-b1ff-7fb7ff1b6f7b/S__4399286.jpg" \
             -o assets/crimson-room.jpg
@@ -42,7 +42,7 @@ jobs:
             "https://content.phuket101.net/wp-content/uploads/20250321105510/Banthatthong-5.jpg" \
             -o assets/banthat-thong.jpg
           test -s assets/tr-gift-shop.jpg
-          test -s assets/banpo-ekkamai.jpg
+          test -s assets/banpo-ekkamai-meat-v2.jpg
           test -s assets/crimson-room.jpg
           test -s assets/asiatique.png
           test -s assets/banthat-thong.jpg
