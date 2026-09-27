@@ -30,7 +30,7 @@ jobs:
             "https://stat.ameba.jp/user_images/20250911/06/maico117/1c/d4/j/o1080144015670806877.jpg?caw=800" \
             -o assets/tr-gift-shop.jpg
           curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
-            "https://img.wongnai.com/p/1600x0/2024/08/25/fd6151d5b77e4a1fba9cbe7a27787050.jpg" \
+            "https://img.wongnai.com/p/1600x0/2025/10/04/a2eb1883067d41e796f87296a091d864.jpg" \
             -o assets/banpo-ekkamai.jpg
           curl -L --fail --retry 3 --connect-timeout 20 -A "Mozilla/5.0" \
             "https://images.squarespace-cdn.com/content/v1/614c298805150223748f6164/c905ba83-e2f8-413d-b1ff-7fb7ff1b6f7b/S__4399286.jpg" \
