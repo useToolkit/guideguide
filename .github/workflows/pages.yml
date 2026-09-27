@@ -23,8 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build Aman hero image
-        run: base64 -d assets/hero-live.b64.00 > hero-aman.webp
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
