@@ -1,18 +1,305 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111318"><title>CHOEGANG BANGKOK 2026</title><style>
-:root{--bg:#f7f6f2;--ink:#16181d;--muted:#74777f;--dark:#111318;--gold:#b89b63;--line:#e9e7e1;--warm:#d87855}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink)}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}.hero{min-height:680px;color:#fff;background:linear-gradient(90deg,rgba(8,10,14,.93),rgba(8,10,14,.58)),url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1800&q=82') center/cover;display:flex;align-items:flex-end}.hero .wrap{padding:110px 0 70px}.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:800;color:#dbc69d}.hero h1{font-size:clamp(58px,9vw,122px);line-height:.82;letter-spacing:-.06em;margin:18px 0}.hero h1 span{font-weight:300}.hero p{font-size:22px;margin-top:54px}.meta{font-size:12px;letter-spacing:.11em;color:#c1c4ca}.status{margin-top:24px;font-size:32px}.top{position:sticky;top:0;z-index:10;background:rgba(247,246,242,.94);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}.nav{height:68px;display:flex;align-items:center;gap:10px}.brand{font-weight:900;letter-spacing:.1em;margin-right:auto}.nav button{border:0;background:transparent;font-size:11px;letter-spacing:.1em;padding:20px 10px}.nav button.on{color:#9b7d4c}.page{display:none;padding:60px 0 100px}.page.on{display:block}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}.head h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.05em;margin:6px 0}.head span{font-size:11px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.card h3{font-size:20px;margin:10px 0 6px}.card p{color:var(--muted);font-size:12px;line-height:1.6}.tags{font-size:9px;letter-spacing:.13em;color:#8f7954;font-weight:800}.actions{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}.actions a,.actions button{border:0;background:transparent;font-size:11px;font-weight:800}.fav{font-size:20px!important;color:#b07c68}.filters{display:grid;gap:14px;margin:20px 0 28px}.search{border:1px solid #ddd;background:white;border-radius:14px;padding:15px 16px;width:100%}.chips{display:flex;gap:8px;flex-wrap:wrap}.chips button{border:1px solid #ddd9d1;background:transparent;border-radius:999px;padding:10px 13px;font-size:11px}.chips button.on{background:#17191e;color:#fff}.flight,.hotel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:14px}.flight .route{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin:22px 0}.flight .route div:last-child{text-align:right}.flight strong{font-size:34px}.flight b{display:block;font-size:22px}.hotel h3{font-size:28px}.clock{display:grid;grid-template-columns:1fr auto 1fr;background:white;border:1px solid var(--line);border-radius:18px;padding:30px;align-items:center}.clock div:last-child{text-align:right}.clock strong{font-size:clamp(38px,7vw,68px);font-weight:300}.clock small{display:block;letter-spacing:.14em;color:var(--muted)}.empty{text-align:center;padding:60px}.bottom{display:none}.sheet{position:fixed;inset:0;background:rgba(10,12,16,.58);z-index:40;align-items:flex-end;justify-content:center;display:none}.sheet.on{display:flex}.panel{width:min(680px,100%);background:#f9f8f4;border-radius:22px 22px 0 0;padding:30px}.panel h2{font-size:32px}.panel .close{float:right;border:0;background:transparent;font-size:28px}.panel a{display:block;background:#17191e;color:white;text-align:center;padding:16px;border-radius:12px;margin-top:20px}.footer{background:#0f1115;color:white;padding:42px 0;margin-top:60px}.footer .wrap{display:flex;justify-content:space-between}.footer span{font-size:10px;color:#777}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin-top:30px;background:#333}.stats div{background:#17191e;padding:18px}.stats strong{display:block;font-size:24px}.stats small{color:#aaa}.savedrow{display:flex;justify-content:space-between;align-items:center}.savedrow label{font-size:12px}.note{color:var(--muted);font-size:13px}
-@media(max-width:800px){.nav button{display:none}.nav .brand{display:block}.grid{grid-template-columns:repeat(2,1fr)}.stats{overflow:auto;display:flex}.stats div{min-width:100px}.bottom{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(250,249,246,.97);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}.bottom button{border:0;background:transparent;padding:12px 4px;font-size:10px}.bottom button.on{color:#9b7d4c}.page{padding-bottom:120px}}
-@media(max-width:560px){.hero{min-height:640px}.hero .wrap{padding-bottom:55px}.hero h1{font-size:58px}.hero p{font-size:18px}.grid{grid-template-columns:1fr}.head{display:block}.head span{display:block;margin-top:8px}.clock{padding:22px 16px}.clock strong{font-size:36px}.nav{height:60px}.flight .route{grid-template-columns:1fr 35px 1fr}.flight strong{font-size:28px}}
-</style></head><body>
-<header class="top"><div class="wrap nav"><div class="brand">CHOEGANG · BANGKOK 2026</div><button data-tab="home" class="on">HOME</button><button data-tab="trip">TRIP</button><button data-tab="hotel">HOTEL</button><button data-tab="guide">GUIDE</button><button data-tab="info">INFO</button></div></header>
-<section class="hero" id="hero"><div class="wrap"><div class="eyebrow">PRIVATE TRAVEL GUIDE · BANGKOK</div><h1>CHOEGANG<br><span>BANGKOK</span></h1><div class="meta">2026.10.23 — 10.26 · BANGKOK · THAILAND</div><p>최강지점의 방콕여행을 환영합니다.</p><div class="status" id="tripStatus"></div><div class="stats"><div><strong>4</strong><small>DAYS</small></div><div><strong>3</strong><small>NIGHTS</small></div><div><strong>BKK</strong><small>BANGKOK</small></div><div><strong>TG</strong><small>THAI AIRWAYS</small></div><div><strong>2</strong><small>HOTELS</small></div></div></div></section>
-<main class="wrap"><section id="home" class="page on"><div class="head"><div><div class="eyebrow">CURATED GUIDE</div><h2>Bangkok, carefully selected</h2></div><span>34 CURATED PLACES</span></div><div id="homeCards" class="grid"></div></section>
-<section id="trip" class="page"><div class="head"><div><div class="eyebrow">TRIP</div><h2>Journey details</h2></div><span>SEOUL → BANGKOK → SEOUL</span></div><div id="flightList"></div><p class="note">표시된 항공 시간은 제공된 일정 기준이며, 실시간 Gate·Terminal·Delay 정보는 포함하지 않습니다.</p></section>
-<section id="hotel" class="page"><div class="head"><div><div class="eyebrow">HOTEL</div><h2>Your Bangkok stay</h2></div><span>SILOM / SATHON</span></div><div id="hotelList"></div></section>
-<section id="guide" class="page"><div class="head"><div><div class="eyebrow">BANGKOK</div><h2>Curated Places</h2></div><span>최강지점을 위해 골라둔 방콕 플레이스</span></div><div class="filters"><input id="q" class="search" placeholder="장소를 검색해보세요"><div id="catChips" class="chips"></div><div id="areaChips" class="chips"></div><div class="savedrow"><b id="count"></b><label><input type="checkbox" id="savedOnly"> 저장한 장소만</label></div></div><div id="placesGrid" class="grid"></div></section>
-<section id="info" class="page"><div class="head"><div><div class="eyebrow">QUICK GUIDE</div><h2>Everything you need, fast</h2></div><span>ON-THE-GO ESSENTIALS</span></div><div class="clock"><div><small>SEOUL</small><strong id="seoul"></strong></div><span>−2 HOURS</span><div><small>BANGKOK</small><strong id="bkk"></strong></div></div><div id="quickHotels" style="margin-top:30px"></div></section></main>
-<div class="sheet" id="sheet"><div class="panel"><button class="close" id="closeSheet">×</button><div class="eyebrow" id="sheetCats"></div><h2 id="sheetName"></h2><p id="sheetEn"></p><p id="sheetAddr" class="note"></p><a id="sheetMap" target="_blank" rel="noopener noreferrer">Google Maps에서 열기 ↗</a></div></div>
-<nav class="bottom"><button data-tab="home" class="on">홈</button><button data-tab="trip">여행</button><button data-tab="hotel">숙소</button><button data-tab="guide">가이드</button><button data-tab="info">정보</button></nav>
-<footer class="footer"><div class="wrap"><b>CHOEGANG</b><span>BANGKOK JOURNEY · 2026</span></div></footer>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f0e7">
+<meta name="description" content="최강지점의 2026 방콕 프라이빗 여행 가이드">
+<title>CHOEGANG · BANGKOK 2026</title>
+<style>
+:root{
+  --ivory:#f5f0e7;
+  --paper:#fbf8f2;
+  --ink:#1b1a18;
+  --muted:#7c766d;
+  --deep:#27342e;
+  --gold:#a88d63;
+  --line:rgba(27,26,24,.14);
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{width:min(1180px,calc(100% - 48px));margin:0 auto}
+.serif,h1,h2,h3{font-family:Georgia,"Times New Roman","Noto Serif KR",serif;font-weight:400}
+.top{position:fixed;inset:0 0 auto;z-index:30;transition:.35s;background:rgba(245,240,231,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.home-view .top{background:linear-gradient(to bottom,rgba(0,0,0,.30),transparent);backdrop-filter:none;border-bottom:0;color:#fff}
+.nav{height:84px;display:flex;align-items:center;gap:30px}
+.brand{margin-right:auto;line-height:1}
+.brand strong{display:block;font-family:Georgia,"Times New Roman",serif;letter-spacing:.22em;font-size:17px;font-weight:400}
+.brand small{display:block;font-size:8px;letter-spacing:.28em;margin-top:7px;opacity:.72}
+.nav button{border:0;background:transparent;padding:30px 2px;font-size:12px;letter-spacing:.08em;color:inherit;position:relative}
+.nav button:after{content:"";position:absolute;left:50%;bottom:19px;width:0;height:1px;background:currentColor;transition:.25s;transform:translateX(-50%)}
+.nav button.on:after,.nav button:hover:after{width:100%}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;background:
+linear-gradient(rgba(10,10,8,.20),rgba(10,10,8,.50)),
+url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=2200&q=88') center 56%/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(transparent,rgba(0,0,0,.20))}
+.hero-inner{position:relative;z-index:2;width:min(900px,calc(100% - 40px));padding-top:74px}
+.hero-kicker{font-size:10px;letter-spacing:.38em;text-transform:uppercase;margin-bottom:26px}
+.hero h1{font-size:clamp(64px,10vw,136px);line-height:.84;letter-spacing:.13em;margin:0 0 26px;text-indent:.13em;font-weight:400}
+.hero-sub{font-family:Georgia,"Noto Serif KR",serif;font-size:clamp(19px,2vw,27px);letter-spacing:.02em;margin:0 0 12px}
+.hero-date{font-size:11px;letter-spacing:.20em;opacity:.86}
+.hero-status{margin-top:48px;font-size:12px;letter-spacing:.14em}
+.hero-status:before,.hero-status:after{content:"";display:inline-block;width:42px;height:1px;background:rgba(255,255,255,.60);vertical-align:middle;margin:0 14px}
+.scroll{position:absolute;z-index:3;left:50%;bottom:26px;transform:translateX(-50%);font-size:8px;letter-spacing:.28em;opacity:.72}
+main.wrap{padding-top:0}
+.page{display:none;padding:110px 0 130px}
+.page.on{display:block}
+#home.page{padding-top:0}
+.intro{display:grid;grid-template-columns:1.05fr .95fr;gap:90px;padding:110px 0 100px;align-items:end}
+.intro h2{font-size:clamp(38px,5vw,67px);line-height:1.32;margin:0}
+.intro p{font-family:Georgia,"Noto Serif KR",serif;font-size:17px;line-height:2;color:#57524c;margin:0}
+.intro-link{display:inline-block;margin-top:28px;font-size:11px;letter-spacing:.08em;border-bottom:1px solid var(--ink);padding-bottom:6px}
+.kicker{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:18px}
+.editorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:120px}
+.editorial-card{height:520px;position:relative;overflow:hidden;color:#fff;border:0;background:#333;text-align:left;padding:0}
+.editorial-card:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 38%,rgba(0,0,0,.70));z-index:1}
+.editorial-card .photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s ease}
+.editorial-card:hover .photo{transform:scale(1.035)}
+.editorial-card .copy{position:absolute;z-index:2;left:30px;right:30px;bottom:30px}
+.editorial-card small{font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.82}
+.editorial-card h3{font-size:32px;margin:10px 0 17px}
+.editorial-card span{font-size:11px;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:5px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+.section-head h2{font-size:clamp(38px,5vw,64px);line-height:1.08;margin:0}
+.section-head p{max-width:420px;color:var(--muted);font-size:13px;line-height:1.7;margin:0;text-align:right}
+.place-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 16px}
+.place-card{min-width:0}
+.place-image{display:block;width:100%;height:360px;border:0;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.place-image:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 52%,rgba(0,0,0,.34))}
+.place-kind{position:absolute;z-index:2;left:18px;bottom:17px;color:#fff;font-size:9px;letter-spacing:.15em}
+.place-heart{position:absolute;z-index:3;right:16px;top:15px;color:white;font-size:22px;text-shadow:0 1px 10px rgba(0,0,0,.3)}
+.place-copy{padding:18px 2px 0}
+.place-loc{font-size:9px;letter-spacing:.13em;color:var(--gold);text-transform:uppercase}
+.place-copy h3{font-size:24px;margin:8px 0 5px;line-height:1.25}
+.place-copy p{font-size:12px;color:var(--muted);margin:0}
+.place-actions{display:flex;gap:18px;margin-top:15px}
+.place-actions button,.place-actions a{border:0;background:transparent;padding:0 0 4px;font-size:10px;border-bottom:1px solid var(--ink);color:var(--ink)}
+.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:52px;padding-top:20px}
+.head h2{font-size:clamp(46px,6vw,74px);line-height:1;margin:0}
+.head span{font-size:10px;letter-spacing:.12em;color:var(--muted)}
+.journey-card{border-top:1px solid var(--ink);padding:26px 0 36px;margin-bottom:42px}
+.journey-top{display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.15em;text-transform:uppercase}
+.journey-top span{color:var(--gold)}
+.journey-route{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;margin:48px 0 26px}
+.journey-route small{display:block;font-size:10px;letter-spacing:.12em;color:var(--muted)}
+.journey-route strong{display:block;font-family:Georgia,serif;font-size:56px;font-weight:400;margin:5px 0}
+.journey-route em{font-style:normal;font-size:22px}
+.journey-route .right{text-align:right}
+.journey-line{position:relative;text-align:center;color:var(--gold)}
+.journey-line:before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line)}
+.journey-line span{position:relative;background:var(--ivory);padding:0 14px}
+.journey-card>p{font-size:12px;color:var(--muted)}
+.stay-card{display:grid;grid-template-columns:1.25fr .75fr;min-height:520px;background:var(--paper);margin-bottom:26px}
+.stay-photo{background-size:cover;background-position:center;min-height:520px}
+.stay-copy{padding:58px 50px;display:flex;flex-direction:column;justify-content:center}
+.stay-copy h3{font-size:42px;line-height:1.08;margin:6px 0 22px}
+.stay-copy p{font-size:13px;line-height:1.8;color:var(--muted)}
+.stay-copy a{align-self:flex-start;margin-top:25px;font-size:11px;border-bottom:1px solid var(--ink);padding-bottom:5px}
+.filters{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-bottom:42px}
+.search{width:100%;border:0;border-bottom:1px solid var(--ink);background:transparent;border-radius:0;padding:16px 0;font-size:20px;font-family:Georgia,"Noto Serif KR",serif;outline:none}
+.search::placeholder{color:#aaa49b}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.chips button{border:1px solid var(--line);background:transparent;border-radius:0;padding:10px 14px;font-size:10px;color:var(--muted)}
+.chips button.on{background:var(--deep);border-color:var(--deep);color:white}
+.savedrow{display:flex;justify-content:space-between;align-items:center;margin-top:20px;font-size:11px}
+.savedrow label{color:var(--muted)}
+.clock{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:46px 0}
+.clock div:last-child{text-align:right}
+.clock small{display:block;font-size:9px;letter-spacing:.24em;color:var(--gold);margin-bottom:10px}
+.clock strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(52px,8vw,94px)}
+.clock>span{font-size:10px;letter-spacing:.14em;color:var(--muted)}
+.quick-row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:24px 0}
+.quick-row small{display:block;font-size:9px;color:var(--gold);letter-spacing:.14em;margin-bottom:6px}
+.quick-row b{font-family:Georgia,"Noto Serif KR",serif;font-size:21px;font-weight:400}
+.quick-row a{font-size:10px;border-bottom:1px solid var(--ink);padding-bottom:4px}
+.note{font-size:12px;color:var(--muted);line-height:1.7}
+.empty{grid-column:1/-1;text-align:center;padding:70px 0;color:var(--muted)}
+.sheet{position:fixed;inset:0;background:rgba(19,18,16,.55);z-index:50;display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(5px)}
+.sheet.on{display:flex}
+.panel{width:min(720px,100%);background:var(--paper);padding:38px 38px calc(38px + env(safe-area-inset-bottom));border-radius:0}
+.panel .close{float:right;border:0;background:none;font-size:28px}
+.panel .eyebrow{font-size:9px;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+.panel h2{font-size:40px;margin:18px 0 6px}
+.panel p{font-size:13px;color:var(--muted);line-height:1.7}
+.panel>a{display:inline-block;margin-top:20px;border-bottom:1px solid var(--ink);padding-bottom:5px;font-size:11px}
+.footer{background:#222821;color:#eee9df;padding:70px 0}
+.footer .wrap{display:flex;justify-content:space-between;align-items:flex-end}
+.footer b{font-family:Georgia,serif;font-weight:400;letter-spacing:.20em}
+.footer span{font-size:9px;letter-spacing:.18em;opacity:.55}
+.bottom{display:none}
+@media(max-width:860px){
+  .wrap{width:min(100% - 34px,1180px)}
+  .nav{height:70px}.nav button{display:none}
+  .brand strong{font-size:14px}.brand small{font-size:7px}
+  .hero-inner{padding-top:40px}
+  .hero h1{font-size:clamp(54px,18vw,90px);letter-spacing:.08em;text-indent:.08em}
+  .intro{grid-template-columns:1fr;gap:34px;padding:80px 0}
+  .intro p{font-size:15px}
+  .editorial-grid{grid-template-columns:1fr;gap:8px;margin-bottom:88px}
+  .editorial-card{height:440px}
+  .place-grid{grid-template-columns:repeat(2,1fr)}
+  .place-image{height:300px}
+  .stay-card{grid-template-columns:1fr}.stay-photo{min-height:380px}.stay-copy{padding:38px 28px}
+  .bottom{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(251,248,242,.97);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);backdrop-filter:blur(16px)}
+  .bottom button{border:0;background:transparent;padding:13px 4px 11px;font-size:10px;color:#766f66}
+  .bottom button.on{color:var(--ink)}
+  .page{padding-bottom:120px}
+  .footer{padding-bottom:105px}
+}
+@media(max-width:560px){
+  .hero{min-height:92svh}
+  .hero-kicker{font-size:8px;letter-spacing:.28em}
+  .hero-sub{font-size:18px}
+  .hero-date{font-size:9px}
+  .hero-status{margin-top:34px;font-size:10px}
+  .section-head,.head{display:block}
+  .section-head p{margin-top:12px;text-align:left}
+  .head span{display:block;margin-top:14px}
+  .place-grid{grid-template-columns:1fr}
+  .place-image{height:410px}
+  .editorial-card{height:480px}
+  .journey-route{grid-template-columns:1fr 70px 1fr}
+  .journey-route strong{font-size:42px}
+  .journey-route em{font-size:18px}
+  .clock{padding:34px 0}
+  .clock strong{font-size:50px}
+  .clock>span{font-size:8px}
+  .panel{padding:30px 22px calc(28px + env(safe-area-inset-bottom))}
+}
+</style>
+</head>
+
+<body class="home-view">
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#" onclick="tabs('home');return false"><strong>CHOEGANG</strong><small>PRIVATE TRAVEL</small></a>
+    <button data-tab="home" class="on">홈</button>
+    <button data-tab="trip">일정</button>
+    <button data-tab="hotel">호텔</button>
+    <button data-tab="guide">가이드</button>
+    <button data-tab="info">여행정보</button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">A MORE MEANINGFUL JOURNEY</div>
+    <h1>BANGKOK</h1>
+    <p class="hero-sub">최강지점의 특별한 방콕 여행</p>
+    <div class="hero-date">2026. 10. 23 — 10. 26 · THAILAND</div>
+    <div class="hero-status" id="tripStatus"></div>
+  </div>
+  <div class="scroll">SCROLL</div>
+</section>
+
+<main class="wrap">
+  <section id="home" class="page on">
+    <div class="intro">
+      <div>
+        <div class="kicker">Bangkok, Thailand</div>
+        <h2>좋은 사람들이<br>좋은 곳에서 만드는,<br>더 특별한 시간.</h2>
+      </div>
+      <div>
+        <p>일상의 속도를 잠시 멈추고, 방콕이 가진 깊은 매력 속으로. 최강지점을 위해 고른 호텔과 식당, 루프탑과 즐길 거리를 한 곳에 담았습니다.</p>
+        <a class="intro-link" href="#" onclick="tabs('trip');return false">우리의 여행 보기 →</a>
+      </div>
+    </div>
+
+    <div class="editorial-grid">
+      <button class="editorial-card" onclick="tabs('trip')">
+        <span class="photo" style="background-image:url('https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1000&q=84')"></span>
+        <span class="copy"><small>Journey</small><h3>오늘의 일정</h3><span>여정 바로가기 →</span></span>
+      </button>
+      <button class="editorial-card" onclick="tabs('hotel')">
+        <span class="photo" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=84')"></span>
+        <span class="copy"><small>Stay</small><h3>머무는 곳</h3><span>호텔 알아보기 →</span></span>
+      </button>
+      <button class="editorial-card" onclick="tabs('guide')">
+        <span class="photo" style="background-image:url('https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=84')"></span>
+        <span class="copy"><small>Curated for you</small><h3>방콕에서 즐길 것</h3><span>추천 리스트 보기 →</span></span>
+      </button>
+    </div>
+
+    <div class="section-head">
+      <div><div class="kicker">Selected Places</div><h2>이번 여행을 위한<br>세 곳의 선택.</h2></div>
+      <p>루프탑부터 리버사이드까지, 방콕의 분위기를 가장 잘 느낄 수 있는 장소를 먼저 만나보세요.</p>
+    </div>
+    <div id="homeCards" class="place-grid"></div>
+  </section>
+
+  <section id="trip" class="page">
+    <div class="head">
+      <div><div class="kicker">Our Journey</div><h2>여행 일정</h2></div>
+      <span>서울 → 방콕 → 서울</span>
+    </div>
+    <div id="flightList"></div>
+    <p class="note">항공 시간은 제공된 여행 일정 기준이며 실시간 게이트·터미널·지연 정보는 포함하지 않습니다.</p>
+  </section>
+
+  <section id="hotel" class="page">
+    <div class="head">
+      <div><div class="kicker">Where We Stay</div><h2>머무는 곳</h2></div>
+      <span>실롬 · 사톤</span>
+    </div>
+    <div id="hotelList"></div>
+  </section>
+
+  <section id="guide" class="page">
+    <div class="head">
+      <div><div class="kicker">Curated Bangkok</div><h2>방콕 가이드</h2></div>
+      <span>최강지점을 위해 골라둔 장소들</span>
+    </div>
+    <div class="filters">
+      <input id="q" class="search" placeholder="어디를 찾고 계신가요?">
+      <div id="catChips" class="chips"></div>
+      <div id="areaChips" class="chips"></div>
+      <div class="savedrow"><b id="count"></b><label><input type="checkbox" id="savedOnly"> 저장한 장소만 보기</label></div>
+    </div>
+    <div id="placesGrid" class="place-grid"></div>
+  </section>
+
+  <section id="info" class="page">
+    <div class="head">
+      <div><div class="kicker">Travel Essentials</div><h2>여행정보</h2></div>
+      <span>필요한 정보를 빠르게</span>
+    </div>
+    <div class="clock">
+      <div><small>SEOUL</small><strong id="seoul"></strong></div>
+      <span>2시간 차이</span>
+      <div><small>BANGKOK</small><strong id="bkk"></strong></div>
+    </div>
+    <div id="quickHotels" style="margin-top:46px"></div>
+  </section>
+</main>
+
+<div class="sheet" id="sheet">
+  <div class="panel">
+    <button class="close" id="closeSheet">×</button>
+    <div class="eyebrow" id="sheetCats"></div>
+    <h2 id="sheetName"></h2>
+    <p id="sheetEn"></p>
+    <p id="sheetAddr"></p>
+    <a id="sheetMap" target="_blank" rel="noopener noreferrer">Google Maps에서 보기 ↗</a>
+  </div>
+</div>
+
+<nav class="bottom">
+  <button data-tab="home" class="on">홈</button>
+  <button data-tab="trip">일정</button>
+  <button data-tab="hotel">호텔</button>
+  <button data-tab="guide">가이드</button>
+  <button data-tab="info">여행정보</button>
+</nav>
+
+<footer class="footer">
+  <div class="wrap"><b>CHOEGANG</b><span>BANGKOK · OCTOBER 2026</span></div>
+</footer>
 <script>const places=[
   { id:'tr-gift-shop', name:'T.R Gift Shop', categories:['gift'], address:'2 4 Charoen Krung 40 Alley, Bang Rak, Bangkok 10500 Thailand', shortLocation:'Bang Rak · Bangkok', area:'silom-sathon', tags:['gift','souvenir'] },
   { id:'mbk-center', name:'MBK CENTER', categories:['gift'], address:'444 Phaya Thai Rd, Wang Mai, Bangkok 10330 Thailand', shortLocation:'Pathum Wan · Bangkok', area:'siam-pathumwan', tags:['shopping','gift'] },
@@ -68,7 +355,78 @@
   { id:'so-bangkok', label:'HOTEL A', name:'SO BANGKOK', address:'2 N Sathon Rd, Si Lom, Bang Rak, Bangkok 10500 Thailand', area:'SILOM / SATHON' },
   { id:'dusit-thani', label:'HOTEL B', name:'DUSIT THANI BANGKOK', address:'98 Rama IV Rd, Si Lom, Bang Rak, Bangkok 10500 Thailand', area:'SILOM / SATHON' }
 ];
-const cats={all:'ALL',gift:'선물 · GIFT',activity:'놀거리 · ACTIVITY',rooftop:'야경 · ROOFTOP',food:'맛집 · FOOD'};const areas={all:'ALL','silom-sathon':'SILOM / SATHON','siam-pathumwan':'SIAM / PATHUM WAN','sukhumvit-asok':'SUKHUMVIT / ASOK','thonglor-ekkamai':'THONGLOR / EKKAMAI',riverside:'RIVERSIDE'};let cat='all',area='all';let fav=JSON.parse(localStorage.getItem('guideguide:fav')||'[]');const mapUrl=p=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((p.name||'')+' '+p.address);function tabs(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('on',x.id===id));document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('on',x.dataset.tab===id));document.getElementById('hero').style.display=id==='home'?'flex':'none';scrollTo({top:0,behavior:'smooth'})}document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>tabs(b.dataset.tab));
-function card(p){return `<article class="card"><div class="tags">${p.categories.join(' · ').toUpperCase()}</div><h3>${p.name}</h3>${p.englishName?`<p>${p.englishName}</p>`:''}<p>${p.floor?p.floor+' · ':''}${p.shortLocation}</p><div class="actions"><button onclick="openPlace('${p.id}')">DETAIL</button><button class="fav" onclick="toggleFav('${p.id}')">${fav.includes(p.id)?'♥':'♡'}</button><a href="${mapUrl(p)}" target="_blank" rel="noopener noreferrer">지도 ↗</a></div></article>`}function renderHome(){let ids=['ojo-bangkok','iconsiam','akara-sky-hanuman'];homeCards.innerHTML=ids.map(id=>card(places.find(p=>p.id===id))).join('')}function renderPlaces(){let q=document.getElementById('q').value.trim().toLowerCase(),saved=document.getElementById('savedOnly').checked;let r=places.filter(p=>(!q||(`${p.name} ${p.englishName||''} ${p.address} ${(p.tags||[]).join(' ')}`).toLowerCase().includes(q))&&(cat==='all'||p.categories.includes(cat))&&(area==='all'||p.area===area)&&(!saved||fav.includes(p.id)));count.textContent=r.length+' PLACES';placesGrid.innerHTML=r.length?r.map(card).join(''):'<div class="empty">찾으시는 장소가 없습니다.</div>'}function chips(){catChips.innerHTML=Object.entries(cats).map(([k,v])=>`<button data-cat="${k}" class="${k===cat?'on':''}">${v}</button>`).join('');areaChips.innerHTML=Object.entries(areas).map(([k,v])=>`<button data-area="${k}" class="${k===area?'on':''}">${v}</button>`).join('');document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{cat=b.dataset.cat;chips();renderPlaces()});document.querySelectorAll('[data-area]').forEach(b=>b.onclick=()=>{area=b.dataset.area;chips();renderPlaces()})}function toggleFav(id){fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];localStorage.setItem('guideguide:fav',JSON.stringify(fav));renderHome();renderPlaces()}window.toggleFav=toggleFav;window.openPlace=id=>{let p=places.find(x=>x.id===id);sheetCats.textContent=p.categories.join(' · ').toUpperCase();sheetName.textContent=p.name;sheetEn.textContent=p.englishName||'';sheetAddr.textContent=p.address;sheetMap.href=mapUrl(p);sheet.classList.add('on')};closeSheet.onclick=()=>sheet.classList.remove('on');sheet.onclick=e=>{if(e.target===sheet)sheet.classList.remove('on')};
-flightList.innerHTML=flights.map(x=>`<article class="flight"><div class="tags">${x.type} · ${x.flightNo}</div><div class="route"><div><small>${x.fromCity}</small><strong>${x.fromCode}</strong><b>${x.fromTime}</b></div><span>✈</span><div><small>${x.toCity}</small><strong>${x.toCode}</strong><b>${x.toTime}</b></div></div><p>${x.date} · ${x.airline}${x.arrivalDate?' · ARRIVAL '+x.arrivalDate:''}</p></article>`).join('');hotelList.innerHTML=hotels.map(x=>`<article class="hotel"><div class="tags">${x.label} · ${x.area}</div><h3>${x.name}</h3><p>${x.address}</p><a href="${mapUrl(x)}" target="_blank" rel="noopener noreferrer">GOOGLE MAPS에서 열기 ↗</a></article>`).join('');quickHotels.innerHTML=hotels.map(x=>`<article class="hotel"><h3>${x.name}</h3><a href="${mapUrl(x)}" target="_blank" rel="noopener noreferrer">지도 열기 ↗</a></article>`).join('');
-function clock(){let n=new Date;seoul.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(n);bkk.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(n)}clock();setInterval(clock,30000);function status(){let n=new Date,s=new Date('2026-10-23T00:00:00+07:00'),e=new Date('2026-10-27T00:00:00+07:00'),d=86400000;tripStatus.textContent=n<s?'D - '+Math.ceil((s-n)/d):n<e?'DAY '+Math.min(4,Math.floor((n-s)/d)+1):'THANK YOU'}status();q.oninput=renderPlaces;savedOnly.onchange=renderPlaces;chips();renderHome();renderPlaces();</script></body></html>
+const cats={all:'전체',gift:'선물',activity:'즐길거리',rooftop:'루프탑',food:'맛집'};const areas={all:'전체 지역','silom-sathon':'실롬 · 사톤','siam-pathumwan':'시암 · 빠툼완','sukhumvit-asok':'수쿰빗 · 아속','thonglor-ekkamai':'통로 · 에까마이',riverside:'리버사이드'};let cat='all',area='all';let fav=JSON.parse(localStorage.getItem('guideguide:fav')||'[]');const mapUrl=p=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((p.name||'')+' '+p.address);function tabs(id){
+  document.body.classList.toggle('home-view',id==='home');
+  document.querySelectorAll('.page').forEach(x=>x.classList.toggle('on',x.id===id));
+  document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('on',x.dataset.tab===id));
+  document.getElementById('hero').style.display=id==='home'?'flex':'none';
+  scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>tabs(b.dataset.tab));
+function imageFor(p){
+  const special={
+    'ojo-bangkok':'https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&w=1100&q=82',
+    'iconsiam':'https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1100&q=82',
+    'akara-sky-hanuman':'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1100&q=82',
+    'tichuca':'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1100&q=82',
+    'lumpini-park':'https://images.unsplash.com/photo-1562602833-0f4ab2fc46e3?auto=format&fit=crop&w=1100&q=82',
+    'thipsamai-siam-paragon':'https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1100&q=82'
+  };
+  if(special[p.id]) return special[p.id];
+  if(p.categories.includes('food')) return 'https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1100&q=82';
+  if(p.categories.includes('rooftop')) return 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1100&q=82';
+  if(p.categories.includes('gift')) return 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1100&q=82';
+  return 'https://images.unsplash.com/photo-1562602833-0f4ab2fc46e3?auto=format&fit=crop&w=1100&q=82';
+}
+function card(p){
+  const kind=p.categories.map(c=>({gift:'선물',activity:'즐길거리',rooftop:'루프탑',food:'맛집'}[c]||c)).join(' · ');
+  return `<article class="place-card">
+    <button class="place-image" style="background-image:url('${imageFor(p)}')" onclick="openPlace('${p.id}')" aria-label="${p.name} 상세보기">
+      <span class="place-kind">${kind}</span>
+      <span class="place-heart" onclick="event.stopPropagation();toggleFav('${p.id}')">${fav.includes(p.id)?'♥':'♡'}</span>
+    </button>
+    <div class="place-copy">
+      <div class="place-loc">${p.floor?p.floor+' · ':''}${p.shortLocation}</div>
+      <h3>${p.name}</h3>
+      ${p.englishName?`<p>${p.englishName}</p>`:''}
+      <div class="place-actions">
+        <button onclick="openPlace('${p.id}')">자세히 보기</button>
+        <a href="${mapUrl(p)}" target="_blank" rel="noopener noreferrer">지도 열기 ↗</a>
+      </div>
+    </div>
+  </article>`;
+}
+function renderHome(){let ids=['ojo-bangkok','iconsiam','akara-sky-hanuman'];homeCards.innerHTML=ids.map(id=>card(places.find(p=>p.id===id))).join('')}function renderPlaces(){
+  let q=document.getElementById('q').value.trim().toLowerCase(),saved=document.getElementById('savedOnly').checked;
+  let r=places.filter(p=>(!q||(`${p.name} ${p.englishName||''} ${p.address} ${(p.tags||[]).join(' ')}`).toLowerCase().includes(q))&&(cat==='all'||p.categories.includes(cat))&&(area==='all'||p.area===area)&&(!saved||fav.includes(p.id)));
+  count.textContent='총 '+r.length+'곳';
+  placesGrid.innerHTML=r.length?r.map(card).join(''):'<div class="empty">조건에 맞는 장소가 없습니다.</div>';
+}function chips(){catChips.innerHTML=Object.entries(cats).map(([k,v])=>`<button data-cat="${k}" class="${k===cat?'on':''}">${v}</button>`).join('');areaChips.innerHTML=Object.entries(areas).map(([k,v])=>`<button data-area="${k}" class="${k===area?'on':''}">${v}</button>`).join('');document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{cat=b.dataset.cat;chips();renderPlaces()});document.querySelectorAll('[data-area]').forEach(b=>b.onclick=()=>{area=b.dataset.area;chips();renderPlaces()})}function toggleFav(id){fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];localStorage.setItem('guideguide:fav',JSON.stringify(fav));renderHome();renderPlaces()}window.toggleFav=toggleFav;window.openPlace=id=>{let p=places.find(x=>x.id===id);sheetCats.textContent=p.categories.join(' · ').toUpperCase();sheetName.textContent=p.name;sheetEn.textContent=p.englishName||'';sheetAddr.textContent=p.address;sheetMap.href=mapUrl(p);sheet.classList.add('on')};closeSheet.onclick=()=>sheet.classList.remove('on');sheet.onclick=e=>{if(e.target===sheet)sheet.classList.remove('on')};
+flightList.innerHTML=flights.map(x=>`<article class="journey-card">
+  <div class="journey-top"><span>${x.type==='OUTBOUND'?'출국편':'귀국편'}</span><b>${x.flightNo} · ${x.airline}</b></div>
+  <div class="journey-route">
+    <div><small>${x.fromCity}</small><strong>${x.fromCode}</strong><em>${x.fromTime}</em></div>
+    <div class="journey-line"><span>✈</span></div>
+    <div class="right"><small>${x.toCity}</small><strong>${x.toCode}</strong><em>${x.toTime}</em></div>
+  </div>
+  <p>${x.date}${x.arrivalDate?' · 도착 '+x.arrivalDate:''} · ${x.note}</p>
+</article>`).join('');
+
+hotelList.innerHTML=hotels.map((x,i)=>`<article class="stay-card">
+  <div class="stay-photo" style="background-image:url('${i===0?'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=84':'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1400&q=84'}')"></div>
+  <div class="stay-copy">
+    <div class="kicker">${x.label==='HOTEL A'?'숙소 A':'숙소 B'} · ${x.area}</div>
+    <h3>${x.name}</h3>
+    <p>${x.address}</p>
+    <a href="${mapUrl(x)}" target="_blank" rel="noopener noreferrer">Google Maps에서 보기 ↗</a>
+  </div>
+</article>`).join('');
+
+quickHotels.innerHTML=hotels.map(x=>`<article class="quick-row"><div><small>숙소</small><b>${x.name}</b></div><a href="${mapUrl(x)}" target="_blank" rel="noopener noreferrer">지도 ↗</a></article>`).join('');
+
+function clock(){let n=new Date;seoul.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(n);bkk.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(n)}clock();setInterval(clock,30000);function status(){
+  let n=new Date,s=new Date('2026-10-23T00:00:00+07:00'),e=new Date('2026-10-27T00:00:00+07:00'),d=86400000;
+  tripStatus.textContent=n<s?'출발까지 '+Math.ceil((s-n)/d)+'일':n<e?'방콕 여행 '+Math.min(4,Math.floor((n-s)/d)+1)+'일차':'좋은 여행이었습니다';
+}status();q.oninput=renderPlaces;savedOnly.onchange=renderPlaces;chips();renderHome();renderPlaces();</script>
+</body>
+</html>
